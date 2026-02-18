@@ -2,9 +2,5 @@
   "include": ["src", "scripts", "tests"],
   "venvPath": ".",
   "typeCheckingMode": "strict",
-  "reportMissingTypeStubs": "none",
-  "reportUnknownMemberType": "error",
-  "reportUnknownArgumentType": "error",
-  "reportUnknownVariableType": "error",
-  "reportUnnecessaryIsInstance": "error"
+  "exclude": ["**/__pycache__", ".venv"]
 }

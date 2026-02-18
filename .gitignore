@@ -36,3 +36,5 @@ Thumbs.db
 build/
 
 data/*
+
+node_modules/
