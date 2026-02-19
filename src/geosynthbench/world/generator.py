@@ -12,6 +12,7 @@ from geosynthbench.core.geometry import (
     rect_polygon,
 )
 from geosynthbench.core.rng import RNG
+from geosynthbench.core.stats import attach_derived_state
 from geosynthbench.core.types import EntityId, Point
 from geosynthbench.world.entities import (
     BuildingEntity,
@@ -50,7 +51,9 @@ def generate_world_state_t1(scene: SceneConfig, seed: int) -> WorldState:
         entities.append(water)
 
     prov = Provenance(seed=seed)
-    return WorldState(scene=scene, entities=entities, derived=None, provenance=prov)
+    state = WorldState(scene=scene, entities=entities, derived=None, provenance=prov)
+    state = attach_derived_state(state)
+    return state
 
 
 def _new_entity_id(prefix: str, idx: int) -> EntityId:
